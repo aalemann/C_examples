@@ -98,7 +98,7 @@ int main() {
     // note, the print_2Darr function is not working as it expects **arr as argument    
     for ( ii = 0; ii < NROWS; ++ii ) {
         for ( jj = 0; jj < N_cols; ++jj )
-            printf( "%f (%p)\t",arr5[ii][jj], &arr5[ii][jj] );
+            printf( "%f (%p)\t",arr5[ii][jj], (void *)&arr5[ii][jj] );
         printf( "\n" );
     }
     printf( "\n" );
@@ -137,7 +137,7 @@ void print_2Darr( double **arr_2D, int N_rows, int N_cols ) {
     // print 2D array to console
     for ( ii=0 ; ii<N_rows ; ++ii) {
         for ( jj=0 ; jj<N_cols; ++jj) {
-            printf( "%f (%p)\t", arr_2D[ii][jj], &arr_2D[ii][jj] );
+            printf( "%f (%p)\t", arr_2D[ii][jj], (void*)&arr_2D[ii][jj] );
         }
         printf( "\n" );
     }
