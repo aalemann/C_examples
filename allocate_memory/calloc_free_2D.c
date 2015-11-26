@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NROWS 5             // rows
-#define NCOLS 10            // columns
+#define NROWS 3             // rows
+#define NCOLS 5            // columns
 
 void print_2Darr( double **arr_2D, int N_rows, int N_cols );
 void free_matrix_d( double** arr, long int Nrows );
@@ -98,9 +98,10 @@ int main() {
     // note, the print_2Darr function is not working as it expects **arr as argument    
     for ( ii = 0; ii < NROWS; ++ii ) {
         for ( jj = 0; jj < N_cols; ++jj )
-            printf( "%f\t",arr5[ii][jj] );
+            printf( "%f (%p)\t",arr5[ii][jj], &arr5[ii][jj] );
         printf( "\n" );
     }
+    printf( "\n" );
     free( arr5 );
 
     // method similar to the one which is used in numerical recipies
@@ -136,7 +137,7 @@ void print_2Darr( double **arr_2D, int N_rows, int N_cols ) {
     // print 2D array to console
     for ( ii=0 ; ii<N_rows ; ++ii) {
         for ( jj=0 ; jj<N_cols; ++jj) {
-            printf( "%f\t", arr_2D[ii][jj] );
+            printf( "%f (%p)\t", arr_2D[ii][jj], &arr_2D[ii][jj] );
         }
         printf( "\n" );
     }
